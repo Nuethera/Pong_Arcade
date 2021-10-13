@@ -41,17 +41,16 @@ screen.onkeypress(key='Down', fun=p2.move_down)
 game_is_on = True
 
 while game_is_on:
+
     ball.move()
     c = ball.check_bounds()
 
     if c == 1:
         s1.update_score()
-        print("updating p1 score")
     elif c == 2:
         s2.update_score()
-        print("updating p2 score")
-    if c != 0:
-        time.sleep(1)
+
+
 
 
 screen.exitonclick()

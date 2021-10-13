@@ -15,7 +15,7 @@ class Score(Turtle):
         self.write_score()
 
     def write_score(self):
-        self.write(arg=f"{self.p_score}", move=False, align='center', font=('OCR A Extended', 20, 'bold'))
+        self.write(arg=f"{self.p_score}", move=False, align='center', font=('OCR A Extended', 30, 'bold'))
 
     def update_score(self):
         self.clear()

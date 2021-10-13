@@ -3,13 +3,13 @@ from turtle import Turtle
 
 class Player1(Turtle):
 
-    def __init__(self,id):
+    def __init__(self, id):
         super().__init__("square")
         self.speed(0)
         if id == 1:
-            self.goto(-580,0)
+            self.goto(-580, 0)
         elif id == 2:
-            self.goto(580,0)
+            self.goto(580, 0)
         self.color('white')
 
         self.up()
@@ -18,9 +18,9 @@ class Player1(Turtle):
     def move_up(self):
         a = self.ycor()
         if a < 330:
-            self.sety(a + 20)
+            self.sety(a + 30)
 
     def move_down(self):
         a = self.ycor()
         if a > -325:
-            self.sety(a - 20)
+            self.sety(a - 30)
