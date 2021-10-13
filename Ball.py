@@ -1,4 +1,5 @@
 import random
+import time
 from turtle import Turtle
 
 
@@ -9,6 +10,7 @@ class Ball(Turtle):
         self.up()
         #self.shapesize(stretch_wid=0.5,stretch_len=0.5)
         self.color('lime green')
+        #random start
         self.seth(60)
 
     def move(self):
@@ -18,3 +20,19 @@ class Ball(Turtle):
             self.fd(20)
         self.fd(20)
 
+    def check_bounds(self):
+        a = 0
+        if self.xcor() > 600:
+            a = 1
+            #random angle toward p1
+            self.seth(150)
+        elif self.xcor() < -600:
+            a = 2
+            #random angle toward p2
+            self.seth(30)
+        if a != 0:
+            self.ht()
+            self.goto(0,0)
+            self.st()
+            time.sleep(1)
+        return a
