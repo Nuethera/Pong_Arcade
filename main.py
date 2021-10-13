@@ -3,6 +3,7 @@ from turtle import Turtle, Screen
 from player1 import Player1
 from Ball import Ball
 from score import Score
+
 screen = Screen()
 
 
@@ -32,7 +33,7 @@ ball = Ball()
 s1 = Score(id=1)
 s2 = Score(id=2)
 screen.listen()
-#fix keypress conflicts
+# fix keypress conflicts
 screen.onkeypress(key='w', fun=p1.move_up)
 screen.onkeypress(key='s', fun=p1.move_down)
 screen.onkeypress(key='Up', fun=p2.move_up)
@@ -50,7 +51,10 @@ while game_is_on:
     elif c == 2:
         s2.update_score()
 
+    if ball.distance(p2) < 40 and ball.xcor() > 350:
+        ball.bounce_x()
 
-
+    if ball.distance(p1) < 50 and ball.xcor() < -350:
+        ball.bounce_x()
 
 screen.exitonclick()

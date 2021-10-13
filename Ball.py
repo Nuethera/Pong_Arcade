@@ -22,6 +22,12 @@ class Ball(Turtle):
         self.seth(h - a)
         self.fd(20)
 
+    def bounce_x(self):
+        h = self.heading()
+        a = 180 - (2 * h)
+        self.seth(h + a)
+        self.fd(20)
+
     def check_bounds(self):
         a = 0
         if self.xcor() >= 600:
