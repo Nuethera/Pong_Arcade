@@ -1,6 +1,8 @@
+import time
 from turtle import Turtle, Screen
 from player1 import Player1
 from Ball import Ball
+from score import Score
 screen = Screen()
 
 
@@ -27,6 +29,8 @@ screen_setup()
 p1 = Player1(id=1)
 p2 = Player1(id=2)
 ball = Ball()
+s1 = Score(id=1)
+s2 = Score(id=2)
 screen.listen()
 #fix keypress conflicts
 screen.onkeypress(key='w', fun=p1.move_up)
@@ -38,5 +42,16 @@ game_is_on = True
 
 while game_is_on:
     ball.move()
+    c = ball.check_bounds()
+
+    if c == 1:
+        s1.update_score()
+        print("updating p1 score")
+    elif c == 2:
+        s2.update_score()
+        print("updating p2 score")
+    if c != 0:
+        time.sleep(1)
+
 
 screen.exitonclick()
