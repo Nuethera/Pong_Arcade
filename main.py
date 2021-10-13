@@ -1,6 +1,6 @@
 from turtle import Turtle, Screen
 from player1 import Player1
-
+from Ball import Ball
 screen = Screen()
 
 
@@ -26,6 +26,7 @@ def screen_setup():
 screen_setup()
 p1 = Player1(id=1)
 p2 = Player1(id=2)
+ball = Ball()
 screen.listen()
 #fix keypress conflicts
 screen.onkeypress(key='w', fun=p1.move_up)
