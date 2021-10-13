@@ -33,4 +33,10 @@ screen.onkeypress(key='w', fun=p1.move_up)
 screen.onkeypress(key='s', fun=p1.move_down)
 screen.onkeypress(key='Up', fun=p2.move_up)
 screen.onkeypress(key='Down', fun=p2.move_down)
+
+game_is_on = True
+
+while game_is_on:
+    ball.move()
+
 screen.exitonclick()
