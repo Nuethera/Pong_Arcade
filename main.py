@@ -11,6 +11,7 @@ def screen_setup():
     screen.setup(width=1200, height=800)
     screen.bgcolor("black")
     screen.title("PONG!")
+    screen.tracer(0)
     screen_turtle = Turtle()
     screen_turtle.color('white')
     screen_turtle.speed(0)
@@ -42,7 +43,8 @@ screen.onkeypress(key='Down', fun=p2.move_down)
 game_is_on = True
 
 while game_is_on:
-
+    screen.update()
+    time.sleep(0.03)
     ball.move()
     c = ball.check_bounds()
 
